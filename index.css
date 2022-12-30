@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    background: #f3f2ef;
+}
+
+html,
+body {
+    font-size: 62.53%;
+    height: 100%;
+}
+
+.box {
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 3rem rgba(0,0,0,0.2rem);
+    background: #a5bbdd;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    min-height: 35rem;
+    min-width: 20rem;
+}
+
+#weather-icon {
+    height: 55%;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weather-icon .fas {
+    font-size: 6rem;
+    animation: fas-anime 3s linear infinite alternate;
+}
+
+@keyframes fas-anime {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
+.wave {
+    position: absolute;
+    opacity: 0.3;
+    background: #fff;
+    height: 50rem;
+    width: 50rem;
+    top: 107%;
+    left: 50%;
+    margin-top: -25rem;
+    margin-left: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+
+.wave-two {
+    animation: drift 7000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.1;
+}
+
+.wave-three {
+    animation: drift 5000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.2;
+}
+
+.box::after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-street-view {
+    animation: rotates 3s linear infinite alternate;
+}
+
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+.info {
+    font-size: 1.5rem;
+}
